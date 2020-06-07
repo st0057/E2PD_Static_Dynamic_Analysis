@@ -9,7 +9,9 @@ using std::string;
 class Weapon
 {
   public:
-    string name;
+    string name, type, info;
+    double weight; // in tons
+    void Stats();
     Weapon();
     ~Weapon();
   private:
