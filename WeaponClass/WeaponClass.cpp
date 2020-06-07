@@ -1,6 +1,7 @@
+#include "WeaponClass.h"
 
+// Default Constructor
+Weapon::Weapon() {}
 
-class Weapon
-{
-
-};
+// Destructor
+Weapon::~Weapon() {}
