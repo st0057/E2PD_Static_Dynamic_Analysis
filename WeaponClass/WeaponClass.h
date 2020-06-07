@@ -19,5 +19,4 @@ class Weapon
     double m_weight;
 };
 
-
 #endif
