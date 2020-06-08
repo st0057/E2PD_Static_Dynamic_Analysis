@@ -20,4 +20,5 @@ void Weapon::Stats()
   cout << "Name: " << m_name << endl;
   cout << "Type: " << m_type << endl;
   cout << "Weight: " << m_weight << endl;
+  cout << "" << endl;
 }

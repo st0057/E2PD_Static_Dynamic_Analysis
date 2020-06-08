@@ -32,7 +32,49 @@ int main()
     // Edit a weapon bay 
     else if (option == 3)
     {
-      
+      int editOption = 1;
+
+      while(editOption != 0)
+      {
+        cout << "What field would you like to edit?" << endl;
+        cout << "1. Name." << endl;
+        cout << "2. Type." << endl;
+        cout << "3. Weight" << endl;
+        cout << "0 .Exit."
+      }
+
+      cin >> editOption;
+
+      if (editOption == 1){
+        cout << "What would you like the 'Name' field to say?" << endl;
+        cin >> nameEdit;
+        //TODO: Update Name field
+        //TODO: Display new name
+      }
+
+      else if (editOption == 2){
+        cout << "What would you like the 'Type' field to say?" << endl;
+        cin >> typeEdit;
+        //TODO : Update Type field
+        //TODO: Display new type
+      }
+
+      else if (editOption == 3){
+        cout << "What would you like the 'Weight' field to say?" << endl;
+        cin >> weightEdit;
+        // TODO: Update weight field
+        // TODO: Display new weight
+      }
+    
+      else if (editOption == 0){
+        // This is intentionally left empty as to not enter the else block
+      }
+
+      else {
+        cout << "Please enter a valid option" << endl;
+      }
+
+      return 0;
     }
     else
     {
