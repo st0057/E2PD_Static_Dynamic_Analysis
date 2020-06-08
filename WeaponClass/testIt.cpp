@@ -10,6 +10,7 @@ int main()
 
   Weapon2->Stats();
 
+  // Delete the weapons
   delete Weapon1;
   delete Weapon2;
 
