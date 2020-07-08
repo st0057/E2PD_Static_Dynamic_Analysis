@@ -1,7 +1,11 @@
 #include <iostream>
 #include "WeaponClass.h"
 
-using std::cout;      using std::endl;
+using std::cout;
+using std::endl;
+
+// Default Weapon Constructor
+Weapon::Weapon(){}
 
 // Weapon Constructor
 Weapon::Weapon(string name, string type, double weight)
@@ -14,8 +18,12 @@ Weapon::Weapon(string name, string type, double weight)
 // Destructor
 Weapon::~Weapon() {}
 
+// Put getters and setters here
+
+
 // Function to display weapon stats
-void Weapon::Stats() 
+// Use the getter/setters here
+void Weapon::displayStats() 
 {
   cout << "Name: " << m_name << endl;
   cout << "Type: " << m_type << endl;

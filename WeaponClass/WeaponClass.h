@@ -9,11 +9,19 @@ using std::string;
 class Weapon
 {
   public:
-    void Stats();
+    Weapon();
     Weapon(string name, string type, double weight);
+    void displayStats();
+    // void setName(string WeaponName);
+    // string getName();
+    // void setType(string WeaponType);
+    // string getType();
+    // void setType(double WeaponWeight);
+    // double getType();
     ~Weapon();
   private:
-    string m_name, m_type;
+    string m_name;
+    string m_type;
     double m_weight;
 };
 

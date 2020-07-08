@@ -2,7 +2,8 @@
 #include "WeaponBay.h"
 #include <iostream>
 
-using std::endl;      using std::cout;
+using std::endl;      
+using std::cout;
 using std::cin;
 
 int main() 
@@ -18,6 +19,8 @@ int main()
     cout << "  0. To Exit." << endl;
     cout << ">>>";
     cin >> option;
+
+    // switch to using switch statements in another version
 
     // Build an instance of a bay
     if (option == 1)
@@ -39,8 +42,8 @@ int main()
         cout << "What field would you like to edit?" << endl;
         cout << "1. Name." << endl;
         cout << "2. Type." << endl;
-        cout << "3. Weight" << endl;
-        cout << "0 .Exit."
+        cout << "3. Weight." << endl;
+        cout << "0. Exit."
       }
 
       cin >> editOption;
