@@ -1,6 +1,7 @@
 #include <list>
 using namespace std;
 
+<<<<<<< Updated upstream
 class WeaponBay
 {
 	private:
@@ -13,6 +14,9 @@ class WeaponBay
 
 }
 
+=======
+// Default WeaponBay Constructor
+>>>>>>> Stashed changes
 WeaponBay::WeaponBay()
 {
 	weaponList = std::list<Weapon> weaponList;
@@ -20,7 +24,12 @@ WeaponBay::WeaponBay()
 
 void WeaponBay::addWeapon(Weapon weaponAdding)
 {
+<<<<<<< Updated upstream
 	array.push_back(Weapon);
+=======
+	//array.push_back(Weapon);
+  weaponList.push_back(weaponAdding);
+>>>>>>> Stashed changes
 }
 
 void WeaponBay::removeWeapon(Weapon weaponRemoving)
@@ -39,4 +48,11 @@ void WeaponBay::printWeaponList()
 	{
 		std::cout << it.getName() << endl;
 	}
+<<<<<<< Updated upstream
 }
+=======
+}
+
+// Destructor
+WeaponBay::~WeaponBay(){};
+>>>>>>> Stashed changes
