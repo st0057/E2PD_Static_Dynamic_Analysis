@@ -1,10 +1,14 @@
 #include <list>
-using namespace std;
+#include <iostream>
+
+using std::list;
+using std::cout;
+using std::endl;
 
 // Default WeaponBay Constructor
 WeaponBay::WeaponBay()
 {
-	weaponList = std::list<Weapon> weaponList;
+	weaponList = list<Weapon> weaponList;
 }
 
 void WeaponBay::addWeapon(Weapon weaponAdding)
@@ -25,9 +29,9 @@ void WeaponBay::releaseWeapon(Weapon weaponReleasing)
 
 void WeaponBay::printWeaponList()
 {
-	for(std::list<Weapon>::iterator it = weaponList.begin(); it != weaponList.end(); it++)
+	for(list<Weapon>::iterator it = weaponList.begin(); it != weaponList.end(); it++)
 	{
-		std::cout << it.getName() << endl;
+		cout << it.getName() << endl;
 	}
 }
 
