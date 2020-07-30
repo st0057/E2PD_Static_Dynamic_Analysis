@@ -51,7 +51,7 @@ int test6() {
 //***
 
 //*** double-free and use-after-free problems
-void f(int *p);
+void f(int *p){}
 
 void testUseMiddleArgAfterDelete(int *p) {
   delete p;
@@ -60,13 +60,13 @@ void testUseMiddleArgAfterDelete(int *p) {
 
 class SomeClass {
 public:
-  void f();
+  void f2(){}
 };
 
 void test7() {
   SomeClass *c = new SomeClass;
   delete c;
-  c->f(); // warn: use after free
+  c->f2(); // warn: use after free
 }
 
 void test8() {

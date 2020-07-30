@@ -22,7 +22,7 @@ Weapon::~Weapon() {}
 
 
 // Function to display weapon stats
-// Use the getter/setters here
+// Use the getter/setters here instead
 void Weapon::displayStats() 
 {
   cout << "Name: " << m_name << endl;
