@@ -18,8 +18,23 @@ Weapon::Weapon(string name, string type, double weight)
 // Destructor
 Weapon::~Weapon() {}
 
-// Put getters and setters here
+// Getter for name 
+string get_name()
+{
+  return m_name;
+}
 
+// Getter for type 
+string get_type()
+{
+  return m_type;
+}
+
+// Getter for weight 
+double get_weight()
+{
+  return m_weight;
+}
 
 // Function to display weapon stats
 // Use the getter/setters here instead
