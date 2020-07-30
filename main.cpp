@@ -50,24 +50,24 @@ int test6() {
 }
 //***
 
-//*** double-free and use-after-free problems
-void f(int *p);
+// *** double-free and use-after-free problems
+// void f(int *p);
 
-void testUseMiddleArgAfterDelete(int *p) {
-  delete p;
-  f(p); // warn: use after free
-}
+// // void testUseMiddleArgAfterDelete(int *p) {
+// //   delete p;
+// //   f(p); // warn: use after free
+// // }
 
-class SomeClass {
-public:
-  void f();
-};
+// class SomeClass {
+// public:
+//   void f();
+// };
 
-void test7() {
-  SomeClass *c = new SomeClass;
-  delete c;
-  c->f(); // warn: use after free
-}
+// void test7() {
+//   SomeClass *c = new SomeClass;
+//   delete c;
+//   c->f(); // warn: use after free
+// }
 
 void test8() {
   int *p = new int;
