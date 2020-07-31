@@ -1,4 +1,3 @@
-#include <iostream>
 #include "WeaponClass.h"
 
 using std::cout;
@@ -19,19 +18,19 @@ Weapon::Weapon(string name, string type, double weight)
 Weapon::~Weapon() {}
 
 // Getter for name 
-string get_name()
+string Weapon::getName()
 {
   return m_name;
 }
 
 // Getter for type 
-string get_type()
+string Weapon::getType()
 {
   return m_type;
 }
 
 // Getter for weight 
-double get_weight()
+double Weapon::getWeight()
 {
   return m_weight;
 }
@@ -40,8 +39,8 @@ double get_weight()
 // Use the getter/setters here instead
 void Weapon::displayStats() 
 {
-  cout << "Name: " << m_name << endl;
-  cout << "Type: " << m_type << endl;
-  cout << "Weight: " << m_weight << endl;
+  cout << "Name: " << getName() << endl;
+  cout << "Type: " << getType() << endl;
+  cout << "Weight: " << getWeight() << endl;
   cout << "" << endl;
 }

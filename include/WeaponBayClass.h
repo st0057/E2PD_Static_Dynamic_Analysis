@@ -1,6 +1,9 @@
 #ifndef WeaponBayClass_h
 #define WeaponBayClass_h
 
+#include <list>
+#include "WeaponClass.h"
+
 class WeaponBay
 {
   public:

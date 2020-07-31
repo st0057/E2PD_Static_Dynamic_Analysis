@@ -1,9 +1,9 @@
 #include "WeaponClass.h"
+#include "WeaponBayClass.h"
 
 int main() 
 {
-  int abc = 0;
-  int* abcPtr = &abc;
+
   Weapon* Weapon1 = new Weapon("Fat Man", "Nuke", 2.5);
 
   Weapon1->displayStats();
@@ -12,9 +12,15 @@ int main()
 
   Weapon2->displayStats();
 
+  WeaponBay* Bay1 = new WeaponBay();
+
+  Bay1->addWeapon(*Weapon1);
+
+  Bay1->removeWeapon(*Weapon1);
+
   // Delete the weapons
   //delete Weapon1;
-  delete Weapon2;
+  //delete Weapon2;
 
   return 0;
 }

@@ -13,11 +13,11 @@ class Weapon
     Weapon(string name, string type, double weight);
     void displayStats();
     // void setName(string WeaponName);
-    // string getName();
+    string getName();
     // void setType(string WeaponType);
-    // string getType();
+    string getType();
     // void setType(double WeaponWeight);
-    // double getType();
+    double getWeight();
     ~Weapon();
   private:
     string m_name;

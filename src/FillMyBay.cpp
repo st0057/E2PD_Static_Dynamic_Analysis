@@ -43,12 +43,13 @@ int main()
         cout << "1. Name." << endl;
         cout << "2. Type." << endl;
         cout << "3. Weight." << endl;
-        cout << "0. Exit."
+        cout << "0. Exit." << endl;
       }
 
       cin >> editOption;
 
       if (editOption == 1){
+        string nameEdit;
         cout << "What would you like the 'Name' field to say?" << endl;
         cin >> nameEdit;
         //TODO: Update Name field
@@ -56,6 +57,7 @@ int main()
       }
 
       else if (editOption == 2){
+        string typeEdit;
         cout << "What would you like the 'Type' field to say?" << endl;
         cin >> typeEdit;
         //TODO : Update Type field
@@ -63,6 +65,7 @@ int main()
       }
 
       else if (editOption == 3){
+        string weightEdit;
         cout << "What would you like the 'Weight' field to say?" << endl;
         cin >> weightEdit;
         // TODO: Update weight field
@@ -83,6 +86,6 @@ int main()
     {
       cout << "Please enter a valid option." << endl;
     }
-
+  }
   return 0;
 }
