@@ -8,16 +8,17 @@ int main()
 
   Weapon1->displayStats();
 
-  Weapon* Weapon2 = new Weapon("Little Boy", "Nuke", 1.0);
+  //Weapon* Weapon2 = new Weapon("Little Boy", "Nuke", 1.0);
 
-  Weapon2->displayStats();
+  //Weapon2->displayStats();
 
   WeaponBay* Bay1 = new WeaponBay();
 
-  Bay1->addWeapon(*Weapon1);
+  Bay1->addWeapon(Weapon1);
+  std::cout << "Removing..." << std::endl;
+  Bay1->removeWeapon(Weapon1);
 
-  Bay1->removeWeapon(*Weapon1);
-
+  delete Bay1;
   // Delete the weapons
   //delete Weapon1;
   //delete Weapon2;

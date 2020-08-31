@@ -10,7 +10,8 @@ class Weapon
 {
   public:
     Weapon();
-    Weapon(string name, string type, double weight);
+    Weapon(string, string, double);
+    bool operator==(Weapon);
     void displayStats();
     // void setName(string WeaponName);
     string getName();
