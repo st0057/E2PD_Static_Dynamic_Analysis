@@ -16,13 +16,20 @@ int main()
 
   Bay1->addWeapon(Weapon1);
   Bay1->addWeapon(Weapon2);
-
-  Bay1->removeWeapon(Weapon1);
+  Bay1->removeAllWeapons();
 
   delete Bay1;
-  // Delete the weapons
-  //delete Weapon1;
-  //delete Weapon2;
+
+  Weapon* Weapon3 = new Weapon("Stinky", "Missile", 2.5);
+
+  Weapon3->displayStats();
+
+  WeaponBay* Bay2 = new WeaponBay("Bay 2");
+
+  Bay2->addWeapon(Weapon3);
+  Bay2->removeWeapon(Weapon3);
+
+  delete Bay2;
 
   return 0;
 }
