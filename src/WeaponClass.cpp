@@ -17,7 +17,7 @@ Weapon::Weapon(string name, string type, double weight)
 // Destructor
 Weapon::~Weapon() {}
 
-// Overload operator==
+// Overload of operator==
 bool operator==(Weapon& wpn1, Weapon& wpn2)
 {
   if (&wpn1 == &wpn2)
