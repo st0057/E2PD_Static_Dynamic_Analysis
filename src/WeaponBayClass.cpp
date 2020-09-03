@@ -56,7 +56,7 @@ void WeaponBay::removeAllWeapons()
   {
     list<Weapon*>::iterator it = weaponList.end();
     cout << "Removing " << (*it)->getName() << " from " << getName() << endl;
-    delete(*it)
+    delete(*it);
     weaponList.pop_back();
   }
   cout << "All weapons removed from " << getName() << endl;

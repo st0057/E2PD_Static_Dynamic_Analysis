@@ -12,7 +12,7 @@ class WeaponBay
     std::string getName();
     void addWeapon(Weapon*);
     void removeWeapon(Weapon*);
-    void removeAllWeapons()
+    void removeAllWeapons();
     void releaseWeapon(Weapon);
     void printWeaponList();
     // void setName(string WeaponName);
