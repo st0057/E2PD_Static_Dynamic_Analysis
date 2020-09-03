@@ -8,6 +8,8 @@ class WeaponBay
 {
   public:
     WeaponBay();
+    WeaponBay(std::string);
+    std::string getName();
     void addWeapon(Weapon*);
     void removeWeapon(Weapon*);
     void releaseWeapon(Weapon);
@@ -21,6 +23,7 @@ class WeaponBay
     ~WeaponBay();
   private:
     std::list<Weapon*> weaponList;
+    string m_name;
 };
 
 #endif

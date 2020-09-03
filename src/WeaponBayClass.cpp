@@ -10,14 +10,30 @@ using std::endl;
 // Default WeaponBay Constructor
 WeaponBay::WeaponBay()
 {
-	list<Weapon*> weaponList;
+	
 }
 
+// Weapon Constructor
+WeaponBay::WeaponBay(string name)
+{
+  m_name = name;
+  list<Weapon*> weaponList;
+}
+
+// Getter for name 
+string WeaponBay::getName()
+{
+  return m_name;
+}
+
+// Add a weapon
 void WeaponBay::addWeapon(Weapon* weaponAdding)
 {
+  cout << "Adding " << weaponAdding->getName() << "to " << getName() << endl;
   weaponList.push_back(weaponAdding);
 }
 
+// Remove a weapon
 void WeaponBay::removeWeapon(Weapon* weaponRemoving)
 {
 //	weaponList.remove(weaponRemoving);
@@ -25,6 +41,7 @@ void WeaponBay::removeWeapon(Weapon* weaponRemoving)
 	{
 		if (*it == weaponRemoving)
     {
+      cout << "Removing " << (*it)->getName() << "from " << getName() << endl;
       delete(*it);
       weaponList.erase(it);
       break;
