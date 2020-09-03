@@ -1,3 +1,7 @@
+// To output clang static analyzer to text file do:
+// clang++ --analyze main.cpp &> output.txt
+// To set the include directory
+// clang++ --include-directory <include path from current location>
 
 //*** Dereference of Null Ptr
 class C {
@@ -93,5 +97,3 @@ int main()
   return 0;
 }
 
-// To output clang static analyzer to text file do:
-// clang++ --analyze main.cpp &> output.txt
