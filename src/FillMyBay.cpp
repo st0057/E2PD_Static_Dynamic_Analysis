@@ -1,14 +1,26 @@
 #include "WeaponClass.h"
 #include "WeaponBayClass.h"
 #include <iostream>
+#include <list>
+#include <string>
 
 using std::endl;      
 using std::cout;
 using std::cin;
+using std::list;
+using std::string;
 
 int main() 
 {
-  // Initial ideas of how to test
+  // Go into bay options
+  bayOptions(weaponBayList);
+
+  return 0;
+}
+
+void bayOptions()
+{
+  list<WeaponBay> weaponBayList;
   int option = 1;
   while(option != 0)
   {
@@ -19,74 +31,139 @@ int main()
     cout << "  0. To Exit." << endl;
     cout << ">>>";
     cin >> option;
-
-    // switch to using switch statements and functions to minimize
-    // code complexity
-
-    // Build an instance of a bay
-    if (option == 1)
-    {
-
-    }
-    // Delete an instance of a bay and any weapons in it
-    else if (option == 2)
-    {
-
-    }
-    // Edit a weapon bay 
-    else if (option == 3)
-    {
-      int editOption = 1;
-
-      while(editOption != 0)
-      {
-        cout << "What field would you like to edit?" << endl;
-        cout << "1. Name." << endl;
-        cout << "2. Type." << endl;
-        cout << "3. Weight." << endl;
-        cout << "0. Exit." << endl;
-
-        cin >> editOption;
-      }
-
-      if (editOption == 1){
-        string nameEdit;
-        cout << "What would you like the 'Name' field to say?" << endl;
-        cin >> nameEdit;
-        //TODO: Update Name field
-        //TODO: Display new name
-      }
-
-      else if (editOption == 2){
-        string typeEdit;
-        cout << "What would you like the 'Type' field to say?" << endl;
-        cin >> typeEdit;
-        //TODO : Update Type field
-        //TODO: Display new type
-      }
-
-      else if (editOption == 3){
-        string weightEdit;
-        cout << "What would you like the 'Weight' field to say?" << endl;
-        cin >> weightEdit;
-        // TODO: Update weight field
-        // TODO: Display new weight
-      }
     
-      else if (editOption == 0){
-        // This is intentionally left empty as to not enter the else block
-      }
-
-      else {
-        cout << "Please enter a valid option" << endl;
-      }
-
-      return 0;
-    }
-    else
+    // Execute option 
+    switch(option)
     {
-      cout << "Please enter a valid option." << endl;
+      // Exit Option
+      case 0 :
+        // TODO: add step to clean up weaponBayList
+        cout << "Exiting..." << endl;
+        break;
+      
+      // Build a Bay Option
+      case 1 :
+        string bayName;
+        // Name the new weapon bay
+        cout << "What will you call the new bay?" << endl;
+        cin >> bayName;
+        // Dynamically add new weapon bay to list
+        weaponBayList.push_back(new WeaponBay(bayName));
+      
+      // Delete a Bay Option
+      case 2 :
+        string bayName;
+        // Pick bay to delete
+        cout << "Which bay do you want to delete?" << endl;
+        for(list<WeaponBay>::iterator it = weaponBayList.begin(); it != weaponList.end(); it++)
+        {
+          cout << it.getName() << endl;
+        }
+        cin >> bayName;
+        // Check it is a real bay and delete it
+        for(list<WeaponBay>::iterator it = weaponBayList.begin(); it != weaponList.end(); it++)
+        {
+          if (it.getName() == bayName)
+            {
+              // Delete bay contents
+              it.removeAllWeapons()
+              // Delete the bay
+              delete(it);
+            }
+          else
+            {
+              cout << "Not a valid Bay Name." << endl;
+            }
+        }
+
+      // Edit a Bay Option
+      case 3 :
+        string bayName;
+        // Pick bay to edit
+        cout << "Which bay do you want to edit?" << endl;
+        for(list<WeaponBay>::iterator it = weaponBayList.begin(); it != weaponList.end(); it++)
+        {
+          cout << it.getName() << endl;
+        }
+        cin >> bayName;
+        // Check it is a real bay and edit it
+        for(list<WeaponBay>::iterator it = weaponBayList.begin(); it != weaponList.end(); it++)
+        {
+          if (it.getName() == bayName)
+            {
+              // Edit bay contents
+              editBay(it);
+            }
+          else if(it == weaponBayList.end())
+            {
+              cout << "Not a valid Bay Name." << endl;
+            }
+        }
     }
   }
-  return 0;
+}
+
+void editBay(WeaponBay& weaponBay)
+{
+  int option = 1;
+  while(option != 0)
+  {
+    cout << "Current weapons in bay: " << endl;
+    cout << weaponBay.printWeaponList() << endl;
+
+    cout << "What would you like to do?" << endl;
+    cout << "  1. Add a weapon." << endl;
+    cout << "  2. Delete a weapon." << endl;
+    cout << "  3. Edit a weapon." << endl;
+    cout << "  4. Delete all weapons." << endl;
+    cout << "  0. To return to prevous options." << endl;
+    cout << ">>>";
+    cin >> option;
+    
+    // Execute option 
+    switch(option)
+    {
+      case 0 :
+        continue;
+      
+      // Add a Weapon Option
+      case 1 :
+        string name, type;
+        double weight;
+        cout << "Name your weapon: " << endl;
+        cin >> name;
+        cout << "Type of weapon: " << endl;
+        cin >> name;
+        cout << "Weight(lbs) of weapon: " << endl;
+        // Create the weapon
+        weaponBay.addWeapon(new Weapon(name, type, weight));
+
+      // Delete a Weapon
+      case 2 :
+        string weapon;
+        cout << "Enter name of weapon to delete: " << endl;
+        cin >> weapon;
+
+        for(list<Weapon*>::iterator it = weaponBay.weaponList.begin(); it != weaponBay.weaponList.end(); it++)
+        {
+          if (it->getName() == weapon)
+          {
+            weaponBay.removeWeapon(*it)
+          }
+          else if (it == weaponBay.weaponList.end())
+          {
+            cout << "Invalid weapon name." << endl;
+          }
+        }
+      
+      // TODO: Edit a weapon option 
+      case 3 ;
+        cout << "Feature currently unavailable." << endl;
+        continue;
+      
+      // Delete All Weapons Option 
+      case 4 ;
+        cout << "Deleting all weapons in " << weaponBay.getName() << endl;
+        weaponBay.removeAllWeapons();
+    }
 }

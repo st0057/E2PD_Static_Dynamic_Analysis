@@ -49,6 +49,19 @@ void WeaponBay::removeWeapon(Weapon* weaponRemoving)
 	}
 }
 
+// Remove all weapons
+void WeaponBay::removeAllWeapons()
+{
+  while(weaponList.size() > 0)
+  {
+    list<Weapon*>::iterator it = weaponList.end();
+    cout << "Removing " << (*it)->getName() << " from " << getName() << endl;
+    delete(*it)
+    weaponList.pop_back();
+  }
+  cout << "All weapons removed from " << getName() << endl;
+}
+
 // void WeaponBay::releaseWeapon(Weapon weaponReleasing)
 // {
 // 	weaponList.remove(weaponReleasing);
