@@ -43,6 +43,7 @@ void WeaponBay::removeWeapon(Weapon* weaponRemoving)
     {
       cout << "Removing " << (*it)->getName() << " from " << getName() << endl;
       delete(*it);
+      // Commenting out next block will cause mem leak that static analyzer won't catch
       weaponList.erase(it);
       break;
     }
