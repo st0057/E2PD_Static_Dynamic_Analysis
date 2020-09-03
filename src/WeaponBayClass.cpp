@@ -29,7 +29,7 @@ string WeaponBay::getName()
 // Add a weapon
 void WeaponBay::addWeapon(Weapon* weaponAdding)
 {
-  cout << "Adding " << weaponAdding->getName() << "to " << getName() << endl;
+  cout << "Adding " << weaponAdding->getName() << " to " << getName() << endl;
   weaponList.push_back(weaponAdding);
 }
 
@@ -41,7 +41,7 @@ void WeaponBay::removeWeapon(Weapon* weaponRemoving)
 	{
 		if (*it == weaponRemoving)
     {
-      cout << "Removing " << (*it)->getName() << "from " << getName() << endl;
+      cout << "Removing " << (*it)->getName() << " from " << getName() << endl;
       delete(*it);
       weaponList.erase(it);
       break;

@@ -20,7 +20,8 @@ int main()
     cout << ">>>";
     cin >> option;
 
-    // switch to using switch statements in another version
+    // switch to using switch statements and functions to minimize
+    // code complexity
 
     // Build an instance of a bay
     if (option == 1)
@@ -44,9 +45,9 @@ int main()
         cout << "2. Type." << endl;
         cout << "3. Weight." << endl;
         cout << "0. Exit." << endl;
-      }
 
-      cin >> editOption;
+        cin >> editOption;
+      }
 
       if (editOption == 1){
         string nameEdit;
