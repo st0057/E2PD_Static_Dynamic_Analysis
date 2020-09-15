@@ -10,21 +10,18 @@ class WeaponBay
     WeaponBay();
     WeaponBay(std::string);
     std::string getName();
+    double getBayWeight();
     void addWeapon(Weapon*);
     void removeWeapon(Weapon*);
     void removeAllWeapons();
     void releaseWeapon(Weapon);
     void printWeaponList();
-    // void setName(string WeaponName);
-    // string getName();
-    // void setType(string WeaponType);
-    // string getType();
-    // void setType(double WeaponWeight);
-    // double getType();
+    void printWeaponBayWeight();
     ~WeaponBay();
   private:
     std::list<Weapon*> weaponList;
     string m_name;
+    double m_bay_weight;
 };
 
 #endif

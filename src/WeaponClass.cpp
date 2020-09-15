@@ -53,3 +53,9 @@ void Weapon::displayStats()
   cout << "Weight: " << getWeight() << endl;
   cout << "" << endl;
 }
+
+int abc()
+{
+  int x;
+  return x;
+}

@@ -3,7 +3,6 @@
 
 int main() 
 {
-
   Weapon* Weapon1 = new Weapon("Fat Man", "Nuke", 2.5);
 
   Weapon1->displayStats();
@@ -29,7 +28,7 @@ int main()
   Bay2->addWeapon(Weapon3);
   Bay2->removeWeapon(Weapon3);
 
-  delete Bay2;
+  //delete Bay2;
 
   return 0;
 }
