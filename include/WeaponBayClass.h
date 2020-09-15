@@ -18,6 +18,7 @@ class WeaponBay
     void printWeaponList();
     void printWeaponBayWeight();
     ~WeaponBay();
+    double bay_weight;
   private:
     std::list<Weapon*> weaponList;
     string m_name;

@@ -54,8 +54,3 @@ void Weapon::displayStats()
   cout << "" << endl;
 }
 
-int abc()
-{
-  int x;
-  return x;
-}

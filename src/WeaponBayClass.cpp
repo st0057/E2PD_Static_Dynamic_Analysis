@@ -29,7 +29,7 @@ string WeaponBay::getName()
 // Getter for bay weight 
 double WeaponBay::getBayWeight()
 {
-  return m_bay_weight;
+  return bay_weight;
 }
 
 // Add a weapon
@@ -38,7 +38,7 @@ void WeaponBay::addWeapon(Weapon* weaponAdding)
   cout << "Adding " << weaponAdding->getName() << " to " << getName() << endl;
   weaponList.push_back(weaponAdding);
   // Update Bay total weight
-  m_bay_weight += weaponAdding.getWeight();
+  m_bay_weight += weaponAdding->getWeight();
 }
 
 // Remove a weapon

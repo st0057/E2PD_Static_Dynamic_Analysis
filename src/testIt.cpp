@@ -13,8 +13,11 @@ int main()
 
   WeaponBay* Bay1 = new WeaponBay("Bay 1");
 
+  Bay1->printWeaponBayWeight();
+
   Bay1->addWeapon(Weapon1);
   Bay1->addWeapon(Weapon2);
+  Bay1->printWeaponBayWeight();
   Bay1->removeAllWeapons();
 
   delete Bay1;
