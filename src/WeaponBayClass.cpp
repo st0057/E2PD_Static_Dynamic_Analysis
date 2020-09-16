@@ -29,13 +29,14 @@ string WeaponBay::getName()
 // Getter for bay weight 
 double WeaponBay::getBayWeight()
 {
-  return bay_weight;
+  return m_bay_weight;
 }
 
 // Add a weapon
 void WeaponBay::addWeapon(Weapon* weaponAdding)
 {
   cout << "Adding " << weaponAdding->getName() << " to " << getName() << endl;
+  cout << "" << endl;
   weaponList.push_back(weaponAdding);
   // Update Bay total weight
   m_bay_weight += weaponAdding->getWeight();
@@ -50,12 +51,14 @@ void WeaponBay::removeWeapon(Weapon* weaponRemoving)
 		if (*it == weaponRemoving)
     {
       cout << "Removing " << (*it)->getName() << " from " << getName() << endl;
+      cout << "" << endl;
 
       // Update Bay total weight
       m_bay_weight -= (*it)->getWeight();
 
+      // Commenting out the next line will cause a mem leak
       delete(*it);
-      // Commenting out next block will cause mem leak that static analyzer won't catch
+
       weaponList.erase(it);
       break;
     }
@@ -69,10 +72,13 @@ void WeaponBay::removeAllWeapons()
   {
     list<Weapon*>::iterator it = weaponList.begin();
     cout << "Removing " << (*it)->getName() << " from " << getName() << endl;
+    cout << "" << endl;
+    m_bay_weight -= (*it)->getWeight();
     delete(*it);
     weaponList.pop_front();
   }
   cout << "All weapons removed from " << getName() << endl;
+  cout << "" << endl;
 }
 
 // Display Weapons in Bay
@@ -81,6 +87,7 @@ void WeaponBay::printWeaponList()
 	for(list<Weapon*>::iterator it = weaponList.begin(); it != weaponList.end(); it++)
 	{
 		cout << (*it)->getName() << endl;
+    cout << "" << endl;
 	}
 }
 
@@ -88,6 +95,7 @@ void WeaponBay::printWeaponList()
 void WeaponBay::printWeaponBayWeight()
 {
   cout << getName() << " has a total weight of: " << getBayWeight() << endl;
+  cout << "" << endl;
 }
 
 // Destructor
